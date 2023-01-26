@@ -1,4 +1,4 @@
-﻿namespace MoreGrabsMod
+﻿namespace MoreGrabs
 {
     class GrababilityPatch
     {
@@ -10,7 +10,7 @@
         private static Player.ObjectGrabability Player_Grabability(On.Player.orig_Grabability orig, Player self, PhysicalObject testObj)
         {
             Player.ObjectGrabability origGrabability = orig(self, testObj);
-            if (origGrabability != Player.ObjectGrabability.CantGrab)
+            if (origGrabability != Player.ObjectGrabability.CantGrab && !MoreGrabsOptions.allOneHand.Value)
             {
                 return origGrabability;
             }
