@@ -4,6 +4,12 @@ using Menu.Remix.MixedUI;
 using On;
 using RWCustom;
 
+using System.Security;
+using System.Security.Permissions;
+
+[module: UnverifiableCode]
+[assembly: SecurityPermission(SecurityAction.RequestMinimum, SkipVerification = true)]
+
 namespace MoreGrabs
 {
     [BepInPlugin("drwoof.moregrabs", "More Grabs Mod", "1.1.1")]
